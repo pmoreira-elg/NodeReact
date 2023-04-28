@@ -11,5 +11,5 @@ jobs:
       uses: addnab/docker-run-action@v3
       with:
         image: jimschubert/delete-artifacts:latest
-        options: -e ${{ GITHUB_TOKEN }} --dry-run --owner=pmoreira-elg --repo=NodeReact  --min=1000000
+        options: -e ${{ secrets.GITHUB_TOKEN }} --dry-run --owner=pmoreira-elg --repo=NodeReact  --min=1000000
     
