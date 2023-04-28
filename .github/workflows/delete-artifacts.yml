@@ -1,0 +1,15 @@
+name: Delete Artifacts
+on:
+  workflow_dispatch:
+  
+jobs:
+  clean-artifacts:
+    name: "Clean Artifacts"
+    runs-on: ubuntu-latest
+    steps:
+    - name: Call docker command
+      uses: addnab/docker-run-action@v3
+      with:
+        image: jimschubert/delete-artifacts:latest
+        options: -e ${{ GITHUB_TOKEN }} --dry-run --owner=pmoreira-elg --repo=NodeReact  --min=1000000
+    
